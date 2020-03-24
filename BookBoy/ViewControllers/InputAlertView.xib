@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SKP-fB-btG" customClass="InputAlertView" customModule="BookBoy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28e-Tf-bIF">
+                    <rect key="frame" x="16" y="12.5" width="48" height="30"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="btnCancelAction:" destination="SKP-fB-btG" eventType="touchUpInside" id="FOK-nw-bSo"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M62-Hl-iOE">
+                    <rect key="frame" x="304" y="12.5" width="55" height="30"/>
+                    <state key="normal" title="Confirm"/>
+                    <connections>
+                        <action selector="btnConfirmAction:" destination="SKP-fB-btG" eventType="touchUpInside" id="i8x-5e-dN5"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJH-0e-WBI">
+                    <rect key="frame" x="179.5" y="17" width="16" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oLb-re-Xrk">
+                    <rect key="frame" x="16" y="48" width="343" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="tfEditingChanged:" destination="SKP-fB-btG" eventType="editingChanged" id="bu0-SM-Bhc"/>
+                    </connections>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Tips：support for numbers, English and Emoji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdI-Y6-qJO">
+                    <rect key="frame" x="16" y="91" width="259" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="6/20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdL-zX-QmQ">
+                    <rect key="frame" x="332" y="91" width="27" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstAttribute="bottomMargin" secondItem="UdI-Y6-qJO" secondAttribute="bottom" constant="10" id="0EW-5y-ECd"/>
+                <constraint firstItem="UdI-Y6-qJO" firstAttribute="top" secondItem="oLb-re-Xrk" secondAttribute="bottom" constant="9" id="0ND-KC-ZHN"/>
+                <constraint firstItem="oLb-re-Xrk" firstAttribute="leading" secondItem="SKP-fB-btG" secondAttribute="leading" constant="16" id="8eS-hq-dsd"/>
+                <constraint firstAttribute="trailing" secondItem="M62-Hl-iOE" secondAttribute="trailing" constant="16" id="ClZ-ym-Wsr"/>
+                <constraint firstItem="oLb-re-Xrk" firstAttribute="centerX" secondItem="wJH-0e-WBI" secondAttribute="centerX" id="PUJ-HZ-6Sn"/>
+                <constraint firstItem="tdL-zX-QmQ" firstAttribute="trailing" secondItem="oLb-re-Xrk" secondAttribute="trailing" id="PYQ-4G-wkK"/>
+                <constraint firstItem="tdL-zX-QmQ" firstAttribute="centerY" secondItem="UdI-Y6-qJO" secondAttribute="centerY" id="Stn-Lt-hkF"/>
+                <constraint firstItem="28e-Tf-bIF" firstAttribute="leading" secondItem="SKP-fB-btG" secondAttribute="leading" constant="16" id="T4G-Nn-fYP"/>
+                <constraint firstAttribute="trailing" secondItem="oLb-re-Xrk" secondAttribute="trailing" constant="16" id="TMo-BV-brE"/>
+                <constraint firstItem="wJH-0e-WBI" firstAttribute="top" secondItem="SKP-fB-btG" secondAttribute="topMargin" constant="17" id="Yjp-Kg-nX3"/>
+                <constraint firstItem="UdI-Y6-qJO" firstAttribute="leading" secondItem="oLb-re-Xrk" secondAttribute="leading" id="jYX-g3-jJT"/>
+                <constraint firstItem="28e-Tf-bIF" firstAttribute="centerY" secondItem="wJH-0e-WBI" secondAttribute="centerY" id="prt-ok-2A4"/>
+                <constraint firstItem="M62-Hl-iOE" firstAttribute="centerY" secondItem="wJH-0e-WBI" secondAttribute="centerY" id="sdW-mj-b1T"/>
+                <constraint firstItem="oLb-re-Xrk" firstAttribute="top" secondItem="wJH-0e-WBI" secondAttribute="bottom" constant="10" id="ttk-md-xm9"/>
+                <constraint firstItem="wJH-0e-WBI" firstAttribute="centerX" secondItem="SKP-fB-btG" secondAttribute="centerX" id="wQZ-z8-TPR"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="btnCancel" destination="28e-Tf-bIF" id="wxg-AK-RcY"/>
+                <outlet property="btnConfirm" destination="M62-Hl-iOE" id="pg6-eA-Wga"/>
+                <outlet property="labelCount" destination="tdL-zX-QmQ" id="Uzq-cD-iM9"/>
+                <outlet property="labelTips" destination="UdI-Y6-qJO" id="mr7-IM-hwf"/>
+                <outlet property="labelTitle" destination="wJH-0e-WBI" id="JMG-Nb-HT1"/>
+                <outlet property="tf" destination="oLb-re-Xrk" id="uK5-QL-fsT"/>
+            </connections>
+            <point key="canvasLocation" x="148.55072463768118" y="-54.910714285714285"/>
+        </view>
+    </objects>
+</document>
