@@ -12,7 +12,7 @@ target 'BookBoy' do
     pod 'SDWebImage', '~> 4.3.3'
     pod 'CryptoSwift', '0.8.0'
     pod 'MBProgressHUD'
-    pod 'TMCamera', '~> 0.2.1'
+    pod 'TMCamera', '~> 0.2.2'
 #    pod 'SwiftOCR'
     pod 'FMDB', '~> 2.7.5'
     pod 'SideMenu'

@@ -35,8 +35,19 @@ class HomeViewController: ViewController {
     }
 
     @IBAction func addExcerpt(_ sender: Any) {
-//        openCamera()
-        addBook()
+        let actionCamera = UIAlertAction(title: NSLocalizedString("Add from Camera", comment: ""), style: .default) { [unowned self] _ in
+            self.openCamera()
+        }
+        let actionAdd = UIAlertAction(title: NSLocalizedString("Add a Book", comment: ""), style: .default) { [unowned self] _ in
+            self.addBook()
+        }
+        let actionCancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+        
+        let alert = UIAlertController(title: NSLocalizedString("Choose an Action", comment: ""), message: nil, preferredStyle: .actionSheet)
+        alert.addAction(actionCamera)
+        alert.addAction(actionAdd)
+        alert.addAction(actionCancel)
+        self.present(alert, animated: true, completion: nil)
     }
     
     //MARK:- Private Method -
@@ -124,10 +135,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 extension HomeViewController: TMCameraControllerDelegate {
 
     func openCamera() {
-//        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
-//            print("没有拍照权限")
-//            return
-//        }
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            print("没有拍照权限")
+            return
+        }
         let cameraVc = TMCameraController()
         cameraVc.delegate = self
         self.present(cameraVc, animated: true, completion: nil)

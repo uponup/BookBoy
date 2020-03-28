@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TMCamera
 
 class NotesViewController: ViewController {
     var notes: [Note] = []
@@ -52,7 +53,20 @@ class NotesViewController: ViewController {
     }
     //MARK:- Action -
     @IBAction func addBtnAction(_ sender: Any) {
-        print("add")
+        let actionCamera = UIAlertAction(title: NSLocalizedString("Add from Camera", comment: ""), style: .default) { [unowned self] _ in
+            
+        }
+        let actionAdd = UIAlertAction(title: NSLocalizedString("Add by manual", comment: ""), style: .default) { [unowned self] _ in
+            let noteDetail = NoteDetailViewController()
+            self.navigationController?.pushViewController(noteDetail, animated: true)
+        }
+        let actionCancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+        
+        let alert = UIAlertController(title: NSLocalizedString("Choose an Action", comment: ""), message: nil, preferredStyle: .actionSheet)
+        alert.addAction(actionCamera)
+        alert.addAction(actionAdd)
+        alert.addAction(actionCancel)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -88,5 +102,30 @@ extension NotesViewController: EmptyCollectionProtocol {
         label.textColor = UIColor(hex: 0xd4d4d4)
         label.textAlignment = .center
         return label
+    }
+}
+
+extension NotesViewController: TMCameraControllerDelegate {
+
+    func openCamera() {
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            print("没有拍照权限")
+            return
+        }
+        let cameraVc = TMCameraController()
+        cameraVc.delegate = self
+        self.present(cameraVc, animated: true, completion: nil)
+    }
+    
+    // MARK:- TMCameraControllerDelegate
+    func cameraVc(_ camera: TMCameraController, takesPhoto image: UIImage) {
+        let provider = OCRProvider(deactImage: image) { result in
+            print("扫描结果：\(result)")
+        }
+        provider.scan()
+    }
+    
+    func cameraVc(_ camera: TMCameraController, authFailed status: TMCameraAuthStatus) {
+        
     }
 }

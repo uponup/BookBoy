@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		391A99BC242AE17D004F78C6 /* NoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391A99BA242AE17C004F78C6 /* NoteDetailViewController.swift */; };
+		391A99BD242AE17D004F78C6 /* NoteDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 391A99BB242AE17D004F78C6 /* NoteDetailViewController.xib */; };
 		391DFEAD242A31BB00F0309E /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391DFEAC242A31BB00F0309E /* NoteCell.swift */; };
 		391DFEAF242A31C600F0309E /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 391DFEAE242A31C600F0309E /* NoteCell.xib */; };
 		391DFEB1242A3BA200F0309E /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391DFEB0242A3BA200F0309E /* UICollectionViewExtension.swift */; };
@@ -92,6 +94,8 @@
 
 /* Begin PBXFileReference section */
 		11B94E4D01681B8E33915535 /* Pods-BookBoy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBoy.release.xcconfig"; path = "Target Support Files/Pods-BookBoy/Pods-BookBoy.release.xcconfig"; sourceTree = "<group>"; };
+		391A99BA242AE17C004F78C6 /* NoteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailViewController.swift; sourceTree = "<group>"; };
+		391A99BB242AE17D004F78C6 /* NoteDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteDetailViewController.xib; sourceTree = "<group>"; };
 		391DFEAC242A31BB00F0309E /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		391DFEAE242A31C600F0309E /* NoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
 		391DFEB0242A3BA200F0309E /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
@@ -444,6 +448,8 @@
 				39F278B024056C3D003A55D1 /* HomeViewController.xib */,
 				398992CB24274AC3004457CE /* NotesViewController.swift */,
 				398992CC24274AC3004457CE /* NotesViewController.xib */,
+				391A99BA242AE17C004F78C6 /* NoteDetailViewController.swift */,
+				391A99BB242AE17D004F78C6 /* NoteDetailViewController.xib */,
 				398992C224271818004457CE /* Models */,
 				398992C12427180B004457CE /* Views */,
 			);
@@ -551,6 +557,7 @@
 				39DD35B7242587A000B68779 /* MessageCell.xib in Resources */,
 				39F2777E240556B1003A55D1 /* Assets.xcassets in Resources */,
 				39F278B224056C3D003A55D1 /* HomeViewController.xib in Resources */,
+				391A99BD242AE17D004F78C6 /* NoteDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +689,7 @@
 				39F277E024056095003A55D1 /* GoodCommentReminder.swift in Sources */,
 				3930B40C240929060011657D /* OCRTarget.swift in Sources */,
 				39DD35782423A14100B68779 /* SQLiteManager.swift in Sources */,
+				391A99BC242AE17D004F78C6 /* NoteDetailViewController.swift in Sources */,
 				398992CD24274AC3004457CE /* NotesViewController.swift in Sources */,
 				398992B52425A87D004457CE /* Mesg.swift in Sources */,
 				39F278B524056C48003A55D1 /* SettingViewController.swift in Sources */,
