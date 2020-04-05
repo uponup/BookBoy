@@ -53,7 +53,7 @@ extension MesgViewController: UITableViewDataSource, UITableViewDelegate {
 extension MesgViewController: EmptyProtocol {
     func configEmptyView(tableView: UITableView) -> UIView {
         let label = UILabel(frame: CGRect(x: 0, y: UIScreen.height/2-100, width: UIScreen.width, height: 80))
-        label.text = NSLocalizedString("暂无数据", comment: "")
+        label.text = NSLocalizedString("No data", comment: "")
         label.numberOfLines = 2
         label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = UIColor(hex: 0xd4d4d4)

@@ -218,7 +218,7 @@ public class WKProgressView: UIView {
     public override init(frame: CGRect) {
         progressView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: frame.height))
         super.init(frame: frame)
-        progressView.backgroundColor = UIColor(hex: 0xFDB03B)
+        progressView.backgroundColor = UIColor.tmBlue
         backgroundColor = UIColor.clear
         addSubview(progressView)
     }

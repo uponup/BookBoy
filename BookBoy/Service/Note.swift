@@ -13,7 +13,7 @@ struct Note {
     var id: Int = 0
     var title: String
     var content: String
-    var bookId: Int = 0
+    var bookId: Int?
     var img: Data?
     var isComplete: Bool
     var updateDate: Date
@@ -22,6 +22,24 @@ struct Note {
         title = ""
         content = ""
         img = nil
+        isComplete = false
+        updateDate = Date()
+    }
+    
+    init(_ bookId: Int, _ title: String, _ content: String) {
+        self.bookId = bookId
+        self.title = title
+        self.content = content
+        img = nil
+        isComplete = false
+        updateDate = Date()
+    }
+    
+    init(_ title: String, _ content: String) {
+        self.title = title
+        self.content = content
+        img = nil
+        bookId = nil
         isComplete = false
         updateDate = Date()
     }

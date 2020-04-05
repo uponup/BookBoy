@@ -34,8 +34,8 @@ class InputAlertView: UIView, NibCreatable {
         labelTips.text = NSLocalizedString("Support for numbers, English and Emoji", comment: "")
         labelCount.text = "\(0)/20"
         
-        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveKeyboardChanged(notification:)), name: .keyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveKeyboardChanged(notification:)), name: .keyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveKeyboardChanged(_:)), name: .keyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveKeyboardChanged(_:)), name: .keyboardWillHide, object: nil)
     }
     
     public func showWithBlock(block: @escaping CompletionBlock) {
@@ -56,7 +56,8 @@ class InputAlertView: UIView, NibCreatable {
     }
     
     //MARK:- 通知 -
-    @objc func didReceiveKeyboardChanged(notification: Notification) {
+    @objc func didReceiveKeyboardChanged(_ notification: Notification) {
+        print("收到通知:\n \(notification)")
         guard let userInfo = notification.userInfo, let rect = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {return}
         self.frame = CGRect(x: 0, y: rect.origin.y-(116+20), width: UIScreen.width, height: 116+20)
     }
@@ -96,7 +97,7 @@ class InputAlertView: UIView, NibCreatable {
     
     @IBAction func btnConfirmAction(_ sender: Any) {
         if let block = completion {
-            block(false, tf.text ?? "")
+            block(true, tf.text ?? "")
             dismiss()
         }
     }
@@ -109,6 +110,7 @@ class InputAlertView: UIView, NibCreatable {
     }
     
     deinit {
+        print("unregister")
         NotificationCenter.default.removeObserver(self)
     }
 }

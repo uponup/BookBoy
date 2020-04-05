@@ -18,7 +18,7 @@ target 'BookBoy' do
     pod 'SideMenu'
     pod 'FXBlurView', '~> 1.6.4'
     pod 'TPKeyboardAvoiding', '~> 1.3.3'
-
+    pod 'VegaScrollFlowLayout'
   # Pods for BookBoy
 
 end

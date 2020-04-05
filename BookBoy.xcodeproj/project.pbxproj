@@ -13,8 +13,15 @@
 		391DFEAF242A31C600F0309E /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 391DFEAE242A31C600F0309E /* NoteCell.xib */; };
 		391DFEB1242A3BA200F0309E /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391DFEB0242A3BA200F0309E /* UICollectionViewExtension.swift */; };
 		391DFEB3242A434F00F0309E /* ClickableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391DFEB2242A434F00F0309E /* ClickableCell.swift */; };
+		392D3420243839FE000CE4A9 /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392D341E243839FE000CE4A9 /* TempViewController.swift */; };
+		392D3421243839FE000CE4A9 /* TempViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 392D341F243839FE000CE4A9 /* TempViewController.xib */; };
+		392D3424243843CC000CE4A9 /* Temp2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392D3422243843CC000CE4A9 /* Temp2ViewController.swift */; };
+		392D3425243843CC000CE4A9 /* Temp2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 392D3423243843CC000CE4A9 /* Temp2ViewController.xib */; };
+		392D342A24386265000CE4A9 /* Hud.m in Sources */ = {isa = PBXBuildFile; fileRef = 392D342824386265000CE4A9 /* Hud.m */; };
 		3930B409240928190011657D /* OCRProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930B408240928190011657D /* OCRProvider.swift */; };
 		3930B40C240929060011657D /* OCRTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930B40B240929060011657D /* OCRTarget.swift */; };
+		39484677243A29CC00792AFD /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39484675243A29CC00792AFD /* BooksViewController.swift */; };
+		39484678243A29CC00792AFD /* BooksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39484676243A29CC00792AFD /* BooksViewController.xib */; };
 		3957ECD3240A7C1B009F99D9 /* NibCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3957ECD2240A7C1B009F99D9 /* NibCreatable.swift */; };
 		3957ECD5240A853B009F99D9 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3957ECD4240A853B009F99D9 /* BundleExtension.swift */; };
 		398992B124259FFF004457CE /* MesgHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398992B024259FFF004457CE /* MesgHeaderView.swift */; };
@@ -100,8 +107,16 @@
 		391DFEAE242A31C600F0309E /* NoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
 		391DFEB0242A3BA200F0309E /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		391DFEB2242A434F00F0309E /* ClickableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickableCell.swift; sourceTree = "<group>"; };
+		392D341E243839FE000CE4A9 /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
+		392D341F243839FE000CE4A9 /* TempViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TempViewController.xib; sourceTree = "<group>"; };
+		392D3422243843CC000CE4A9 /* Temp2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp2ViewController.swift; sourceTree = "<group>"; };
+		392D3423243843CC000CE4A9 /* Temp2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Temp2ViewController.xib; sourceTree = "<group>"; };
+		392D342824386265000CE4A9 /* Hud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hud.m; sourceTree = "<group>"; };
+		392D342924386265000CE4A9 /* Hud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hud.h; sourceTree = "<group>"; };
 		3930B408240928190011657D /* OCRProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRProvider.swift; sourceTree = "<group>"; };
 		3930B40B240929060011657D /* OCRTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRTarget.swift; sourceTree = "<group>"; };
+		39484675243A29CC00792AFD /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
+		39484676243A29CC00792AFD /* BooksViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BooksViewController.xib; sourceTree = "<group>"; };
 		3957ECD2240A7C1B009F99D9 /* NibCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibCreatable.swift; sourceTree = "<group>"; };
 		3957ECD4240A853B009F99D9 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		398992B024259FFF004457CE /* MesgHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesgHeaderView.swift; sourceTree = "<group>"; };
@@ -383,6 +398,8 @@
 				391DFEB0242A3BA200F0309E /* UICollectionViewExtension.swift */,
 				398992CF242751AA004457CE /* PopupController.swift */,
 				391DFEB2242A434F00F0309E /* ClickableCell.swift */,
+				392D342924386265000CE4A9 /* Hud.h */,
+				392D342824386265000CE4A9 /* Hud.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -450,8 +467,14 @@
 				398992CC24274AC3004457CE /* NotesViewController.xib */,
 				391A99BA242AE17C004F78C6 /* NoteDetailViewController.swift */,
 				391A99BB242AE17D004F78C6 /* NoteDetailViewController.xib */,
+				39484675243A29CC00792AFD /* BooksViewController.swift */,
+				39484676243A29CC00792AFD /* BooksViewController.xib */,
 				398992C224271818004457CE /* Models */,
 				398992C12427180B004457CE /* Views */,
+				392D341E243839FE000CE4A9 /* TempViewController.swift */,
+				392D341F243839FE000CE4A9 /* TempViewController.xib */,
+				392D3422243843CC000CE4A9 /* Temp2ViewController.swift */,
+				392D3423243843CC000CE4A9 /* Temp2ViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -555,9 +578,12 @@
 				39DD35B1242583BF00B68779 /* MesgViewController.xib in Resources */,
 				398992CA24271B7D004457CE /* BookCell.xib in Resources */,
 				39DD35B7242587A000B68779 /* MessageCell.xib in Resources */,
+				392D3421243839FE000CE4A9 /* TempViewController.xib in Resources */,
+				392D3425243843CC000CE4A9 /* Temp2ViewController.xib in Resources */,
 				39F2777E240556B1003A55D1 /* Assets.xcassets in Resources */,
 				39F278B224056C3D003A55D1 /* HomeViewController.xib in Resources */,
 				391A99BD242AE17D004F78C6 /* NoteDetailViewController.xib in Resources */,
+				39484678243A29CC00792AFD /* BooksViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +658,7 @@
 				398992B92425AF16004457CE /* AppDelegate+Push.swift in Sources */,
 				398992B72425AEBC004457CE /* LocalPushManager.swift in Sources */,
 				39DD357A2423A55800B68779 /* NoteDao.swift in Sources */,
+				392D3420243839FE000CE4A9 /* TempViewController.swift in Sources */,
 				39F27775240556AF003A55D1 /* AppDelegate.swift in Sources */,
 				398992C02425B9AD004457CE /* MessageCellModel.swift in Sources */,
 				39F277D424056095003A55D1 /* StringExtension.swift in Sources */,
@@ -653,11 +680,13 @@
 				39F277E124056095003A55D1 /* ChineseToPinyin.swift in Sources */,
 				39DD35B6242587A000B68779 /* MessageCell.swift in Sources */,
 				39F2789B2405610C003A55D1 /* Global.swift in Sources */,
+				39484677243A29CC00792AFD /* BooksViewController.swift in Sources */,
 				39F278A62405698D003A55D1 /* UIKitBundle.swift in Sources */,
 				391DFEB3242A434F00F0309E /* ClickableCell.swift in Sources */,
 				39F278A824056B7E003A55D1 /* UIScreenExtension.swift in Sources */,
 				3930B409240928190011657D /* OCRProvider.swift in Sources */,
 				39AA89392429B3E300223195 /* AboutUsController.swift in Sources */,
+				392D342A24386265000CE4A9 /* Hud.m in Sources */,
 				391DFEB1242A3BA200F0309E /* UICollectionViewExtension.swift in Sources */,
 				39F27897240560EE003A55D1 /* Urls.swift in Sources */,
 				39F277E624056095003A55D1 /* NumberExtension.swift in Sources */,
@@ -678,6 +707,7 @@
 				39F277D724056095003A55D1 /* LocalVerifyable.swift in Sources */,
 				39F277D324056095003A55D1 /* Regular.swift in Sources */,
 				39F277DE24056095003A55D1 /* UserDefaultsExtension.swift in Sources */,
+				392D3424243843CC000CE4A9 /* Temp2ViewController.swift in Sources */,
 				39F277D924056095003A55D1 /* StorageManager.swift in Sources */,
 				39F277D624056095003A55D1 /* DictionaryExtension.swift in Sources */,
 				39F27876240560AF003A55D1 /* WebViewController.swift in Sources */,
@@ -858,15 +888,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T7DLS38GH3;
+				DEVELOPMENT_TEAM = DCAS2QQQ9F;
 				INFOPLIST_FILE = BookBoy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tm.BookBoy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tm.bb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BookBoy/BookBoy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -881,16 +912,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T7DLS38GH3;
+				DEVELOPMENT_TEAM = DCAS2QQQ9F;
 				INFOPLIST_FILE = BookBoy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tm.BookBoy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tm.bb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BookBoy/BookBoy-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

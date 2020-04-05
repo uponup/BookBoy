@@ -28,3 +28,15 @@
 "Choose an Action" = "Choose an Action";
 "Add by manual" = "Add by manual";
 "Note Detail" = "Note Detail";
+"Save" = "Save";
+"Title can't be nil" = "Title can't be nil";
+"Content too short" = "Content too short";
+"Add success" = "Add success";
+"Extract notes" = "Extract notes";
+"Word count:" = "Word count:";
+"Scan failed" = "Scan failed";
+"No Name Book" = "No Name Book";
+"Message" = "Message";
+"Rate Us" = "Rate Us";
+"About Us" = "About Us";
+"No data" = "No data";

@@ -18,6 +18,9 @@ class SettingViewController: ViewController, NibCreatable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        labelMesg.text = NSLocalizedString("Message", comment: "")
+        labelRate.text = NSLocalizedString("Rate Us", comment: "")
+        labelAbout.text = NSLocalizedString("About Us", comment: "")
     }
 
     @IBAction func mesgControlAction(_ sender: Any) {

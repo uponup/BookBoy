@@ -23,15 +23,10 @@ class HomeViewController: ViewController {
         
         commonInit()
         loadData()
-        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveKeyboardChanged), name: UIApplication.keyboardWillShowNotification, object: nil)
     }
 
     @objc func leftButtonAction() {
         self.present(SideMenuManager.default.leftMenuNavigationController!, animated: true, completion: nil)
-    }
-    
-    @objc func didReceiveKeyboardChanged(_ notification: Notification) {
-        print("\(notification)")
     }
 
     @IBAction func addExcerpt(_ sender: Any) {
@@ -54,6 +49,7 @@ class HomeViewController: ViewController {
     private func addBook() {
         let inputAlertView = InputAlertView.createFromNib()!
         inputAlertView.showWithBlock { [unowned self] (ret, text) in
+            guard ret else { return }
             let book = Book(title: text)
             guard BookDao.addBook(book: book) else {
                 print("插入book失败")
@@ -121,9 +117,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             addBook()
         }else {
             let book = books[indexPath.row]
-            let notesVc = NotesViewController()
-            notesVc.bookId = book.id
-            self.navigationController?.pushViewController(NotesViewController(), animated: true)
+            let notesVc = NotesViewController(book.id)
+            self.navigationController?.pushViewController(notesVc, animated: true)
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -148,6 +143,13 @@ extension HomeViewController: TMCameraControllerDelegate {
     func cameraVc(_ camera: TMCameraController, takesPhoto image: UIImage) {
         let provider = OCRProvider(deactImage: image) { result in
             print("扫描结果：\(result)")
+            guard result.count > 0 else {
+                Hud.showErrorHit("Scan failed")
+                return
+            }
+            let note = Note("", result)
+            let noteDetail = NoteDetailViewController(bookId: nil, note: note)
+            self.navigationController?.pushViewController(noteDetail, animated: true)
         }
         provider.scan()
     }

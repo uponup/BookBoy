@@ -8,16 +8,19 @@
 
 import UIKit
 import TMCamera
+import VegaScrollFlowLayout
 
 class NotesViewController: ViewController {
     var notes: [Note] = []
-
-    var bookId: Int? {
-        didSet {
-            if let id = bookId {
-                notes.append(contentsOf: NoteDao.fetchNote(id))
-            }
-        }
+    var bookId: Int
+    
+    init(_ bookId: Int = 0) {
+        self.bookId = bookId
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -26,7 +29,7 @@ class NotesViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let book = BookDao.fetchBook(bookId.intValue) {
+        if let book = BookDao.fetchBook(bookId) {
             title = book.title
         }else {
             title = NSLocalizedString("Notes", comment: "")
@@ -34,30 +37,39 @@ class NotesViewController: ViewController {
         
         collectionView.registerCellClass(NoteCell.self)
         collectionView.setEmptyDelegate(target: self)
-        collectionView.contentInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 10
-        collectionView.setCollectionViewLayout(layout, animated: false)
+        configureCollectionViewLayout()
         
         addBtn.setTitle(NSLocalizedString("Add", comment: ""), for: .normal)
-        
+    }
+    
+    private func configureCollectionViewLayout() {
+        guard let layout = collectionView.collectionViewLayout as? VegaScrollFlowLayout else { return }
+        layout.minimumLineSpacing = 10
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        let itemWidth = UIScreen.main.bounds.width - 2 * 20
+        layout.itemSize = CGSize(width: itemWidth, height: 74)
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         loadData()
     }
+    
     //MARK:- LoadData -
     func loadData() {
-        for _ in 0..<0 {
-            let note = Note.test()
-            notes.append(note)
-        }
+        notes.removeAll()
+        notes.append(contentsOf: NoteDao.fetchNote(bookId))
         collectionView.reloadData()
     }
+    
     //MARK:- Action -
     @IBAction func addBtnAction(_ sender: Any) {
         let actionCamera = UIAlertAction(title: NSLocalizedString("Add from Camera", comment: ""), style: .default) { [unowned self] _ in
-            
+            self.openCamera()
         }
         let actionAdd = UIAlertAction(title: NSLocalizedString("Add by manual", comment: ""), style: .default) { [unowned self] _ in
-            let noteDetail = NoteDetailViewController()
+            let noteDetail = NoteDetailViewController(bookId: self.bookId)
             self.navigationController?.pushViewController(noteDetail, animated: true)
         }
         let actionCancel = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
@@ -86,6 +98,12 @@ extension NotesViewController: UICollectionViewDataSource, UICollectionViewDeleg
         let width = collectionView.bounds.width - 40
         return CGSize(width: width, height: 74)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let note = notes[indexPath.row]
+        let noteDetail = NoteDetailViewController(bookId: bookId, note: note)
+        self.navigationController?.pushViewController(noteDetail, animated: true)
+    }
 }
 
 
@@ -95,8 +113,8 @@ extension NotesViewController: EmptyCollectionProtocol {
     }
     
     func configEmptyView(collectionView: UICollectionView) -> UIView {
-        let label = UILabel(frame: CGRect(x: 0, y: UIScreen.height/2-100, width: collectionView.width-40, height: 80))
-        label.text = NSLocalizedString("暂无数据", comment: "")
+        let label = UILabel(frame: CGRect(x: 0, y: UIScreen.height/2-100, width: collectionView.width, height: 80))
+        label.text = NSLocalizedString("No data", comment: "")
         label.numberOfLines = 2
         label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = UIColor(hex: 0xd4d4d4)
@@ -119,8 +137,15 @@ extension NotesViewController: TMCameraControllerDelegate {
     
     // MARK:- TMCameraControllerDelegate
     func cameraVc(_ camera: TMCameraController, takesPhoto image: UIImage) {
-        let provider = OCRProvider(deactImage: image) { result in
+        let provider = OCRProvider(deactImage: image) { [unowned self] result in
             print("扫描结果：\(result)")
+            guard result.count > 0 else {
+                Hud.showErrorHit("Scan failed")
+                return
+            }
+            let note = Note(self.bookId, "", result)
+            let noteDetail = NoteDetailViewController(bookId: self.bookId, note: note)
+            self.navigationController?.pushViewController(noteDetail, animated: true)
         }
         provider.scan()
     }

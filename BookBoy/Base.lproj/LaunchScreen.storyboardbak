@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,29 +15,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版本：1.0.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHP-d6-ltL" userLabel="AppVersion" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="280.5" y="772" width="73.5" height="21"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="wFy-o1-a86"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHP-d6-ltL" userLabel="AppVersion" colorLabel="IBBuiltInLabel-Red">
+                                <rect key="frame" x="134.5" y="776" width="145" height="16"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Reading makes me wise
+ 
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBq-3p-Evk">
+                                <rect key="frame" x="295.5" y="784" width="78.5" height="0.5"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="D6G-ew-thy"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fu6-rX-26i">
+                                <rect key="frame" x="60" y="784" width="58.5" height="0.5"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="rWo-Um-XuN"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Mu-5I-S6G">
+                                <rect key="frame" x="152" y="132" width="110" height="110"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="TNL-aI-bpV"/>
+                                    <constraint firstAttribute="width" constant="110" id="Wsm-Qi-mJI"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="syv-8Q-BIY">
+                                <rect key="frame" x="152" y="132" width="110" height="110"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="uHP-d6-ltL" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="302" id="ETR-J8-3xY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uHP-d6-ltL" secondAttribute="trailing" constant="60" id="Uvr-5J-O8e"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uHP-d6-ltL" secondAttribute="bottom" constant="69" id="lcK-cg-gDK"/>
+                            <constraint firstItem="uHP-d6-ltL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Axj-kn-Lpr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uHP-d6-ltL" secondAttribute="bottom" constant="70" id="ETk-HC-jEv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZBq-3p-Evk" secondAttribute="trailing" constant="40" id="FkC-bT-x58"/>
+                            <constraint firstItem="ZBq-3p-Evk" firstAttribute="leading" secondItem="uHP-d6-ltL" secondAttribute="trailing" constant="16" id="HUQ-Ep-93p"/>
+                            <constraint firstItem="syv-8Q-BIY" firstAttribute="width" secondItem="8Mu-5I-S6G" secondAttribute="width" id="JCn-xc-hGU"/>
+                            <constraint firstItem="fu6-rX-26i" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="40" id="WAm-Kp-Ypr"/>
+                            <constraint firstItem="8Mu-5I-S6G" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eDS-p7-lkn"/>
+                            <constraint firstItem="fu6-rX-26i" firstAttribute="centerY" secondItem="uHP-d6-ltL" secondAttribute="centerY" id="eyS-NL-fQF"/>
+                            <constraint firstItem="syv-8Q-BIY" firstAttribute="centerX" secondItem="8Mu-5I-S6G" secondAttribute="centerX" id="h7r-YB-xKa"/>
+                            <constraint firstItem="8Mu-5I-S6G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="88" id="if7-mi-NsY"/>
+                            <constraint firstItem="syv-8Q-BIY" firstAttribute="centerY" secondItem="8Mu-5I-S6G" secondAttribute="centerY" id="oSe-A8-CIL"/>
+                            <constraint firstItem="syv-8Q-BIY" firstAttribute="height" secondItem="8Mu-5I-S6G" secondAttribute="height" id="oen-Lw-lXW"/>
+                            <constraint firstItem="ZBq-3p-Evk" firstAttribute="centerY" secondItem="uHP-d6-ltL" secondAttribute="centerY" id="ps3-4P-sbH"/>
+                            <constraint firstItem="fu6-rX-26i" firstAttribute="trailing" secondItem="uHP-d6-ltL" secondAttribute="leading" constant="-16" id="vLc-LY-frF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_logo" width="108" height="108"/>
+    </resources>
 </document>
